@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>First</servlet-name>
+    <servlet-class>com.aks.First.First</servlet-class>
+    <load-on-startup>-1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>Second</servlet-name>
+    <servlet-class>com.aks.First.Second</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>First</servlet-name>
+    <url-pattern>/First</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Second</servlet-name>
+    <url-pattern>/Second</url-pattern>
+  </servlet-mapping>
+  <filter>
+  <filter-name>FirstFilter</filter-name>
+  <filter-class>com.aks.First.FirstFilter</filter-class>
+  <filter-mapping>
+  <filter-name>FirstFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  </filter>
+</web-app>
