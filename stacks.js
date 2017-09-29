@@ -68,8 +68,8 @@ Stacks.prototype.arrange=function(n){
             for(var o=0;o<length(res);o++){
                document.getElementsByClassName(n)[o].style.display="block";
                document.getElementsByClassName(n)[o].style.position="absolute";
-               document.getElementsByClassName(n)[o].style.top=Math.random()*h[o-1];
-               document.getElementsByClassName(n)[o].style.left=Math.random()*w[o-1];
+               document.getElementsByClassName(n)[o].style.top=Math.random()*h[o-1] + "px";
+               document.getElementsByClassName(n)[o].style.left=Math.random()*w[o-1] + "px";
                document.getElementsByClassName(n)[o].style.zIndex=z;
                z-=1
             }
