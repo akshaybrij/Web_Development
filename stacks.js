@@ -28,6 +28,7 @@ Stacks.prototype.arrange=function(n){
      isSquare(w[j],h[j],j);
      document.getElementsByClassName(n)[j].style.display="none";
    }
+   layout(sqr);
    var minsq;
    function sort(sqr){
      var k=0,sq;
@@ -40,9 +41,9 @@ Stacks.prototype.arrange=function(n){
      for(var g=0;g<length(sqr);g++){
        for(var h=0;h<length(sqr);h++){
             if(sqr[res[g]]<sqr[res[h]]){
-                 temp=res[g];
+                 temp=parseInt(res[g]);
                  res[g]=res[h];
-                 res[h]=temp;
+                 res[h]=parseInt(temp);
             }
        }
      }
@@ -56,15 +57,15 @@ Stacks.prototype.arrange=function(n){
      }
      return s;
    }
-   function layout(){
+   function layout(sqr){
      if(length(sqr)!=0){
         if(length(sqr)==1){
           minsq=sq[0]
         }
         else{
             sort(sqr);
-            for(var o=0;o<length(sqr);o++){
-            sqr[o]
+            for(var o=0;o<length(res);o++){
+            console.log(res[o])
             }
         }
      }
