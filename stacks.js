@@ -64,8 +64,14 @@ Stacks.prototype.arrange=function(n){
         }
         else{
             sort(sqr);
+            var z=23;
             for(var o=0;o<length(res);o++){
-            console.log(res[o])
+               document.getElementsByClassName(n)[o].style.display="block";
+               document.getElementsByClassName(n)[o].style.position="absolute";
+               document.getElementsByClassName(n)[o].style.top=Math.random()*h[o-1];
+               document.getElementsByClassName(n)[o].style.left=Math.random()*w[o-1];
+               document.getElementsByClassName(n)[o].style.zIndex=z;
+               z-=1
             }
         }
      }
