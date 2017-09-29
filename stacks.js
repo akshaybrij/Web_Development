@@ -8,6 +8,7 @@ Stacks.prototype.arrange=function(n){
   var w=[];
   var sqr={};
   var rect={};
+  res=[];
   var c=0;
   for(var i=0;i<l;i++){
     h[i]=document.getElementsByClassName(n)[i].clientHeight;
@@ -29,30 +30,46 @@ Stacks.prototype.arrange=function(n){
    }
    var minsq;
    function sort(sqr){
-     for(var k=0;k<sqr.length;k++){
-       for(var l=0;l<sqr.length;l++){
-         if(sqr[k]>sqr[l]){
-           temp=sqr[k];
-           sqr[k]=sqr[l];
-           sqr[l]=temp;
-         }
+     var k=0,sq;
+     for(sq in sqr){
+       if(sqr.hasOwnProperty(sq)){
+        res.push(sq)
+       }
+     }
+     var temp;
+     for(var g=0;g<length(sqr);g++){
+       for(var h=0;h<length(sqr);h++){
+            if(sqr[res[g]]<sqr[res[h]]){
+                 temp=res[g];
+                 res[g]=res[h];
+                 res[h]=temp;
+            }
        }
      }
    }
+   function length(sqr){
+     var s=0,key;
+     for(key in sqr){
+       if(sqr.hasOwnProperty(key)){
+            s+=1;
+       }
+     }
+     return s;
+   }
    function layout(){
-     if(sqr.length!=0){
-        if(sqr.length==1){
+     if(length(sqr)!=0){
+        if(length(sqr)==1){
           minsq=sq[0]
         }
         else{
             sort(sqr);
-            for(var o=0;o<sqr.length;o++){
+            for(var o=0;o<length(sqr);o++){
             sqr[o]
             }
         }
      }
      else{
-
+      sort(rect);
      }
    }
 
